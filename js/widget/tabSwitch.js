@@ -32,7 +32,6 @@ define(function(){
     }
     TabSwitch.prototype.init=function(){
         $(this.tab[this.initialIndex]).addClass(this.tabActiveClass).siblings().removeClass(this.tabActiveClass);
-        show(this.tabPane[this.initialIndex])
         $(this.tabPane[this.initialIndex]).show(200).siblings().hide();
         this.bind();
     }

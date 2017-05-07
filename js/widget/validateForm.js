@@ -6,17 +6,19 @@ define(['validate'],function(validate){
         this.init();
         this.validator();
     }
+
     // 初始化
     validateForm.prototype.init=function(){
         this.form=$('#form-reg');
     };
     // 获取注册表单
-    validateForm.prototype.render=function(){
+    // validateForm.prototype.render=function(){
         
-    };
+    // };
+
     // 验证方法
     validateForm.prototype.validator=function(){
-        var _form=this.form;
+        var _form=this.form;  //防止作用域引起的问题
         this.form.validate({
             rules:{
                 username:{
@@ -62,11 +64,6 @@ define(['validate'],function(validate){
                     email:'请填写正确的Email格式'
                 }
             },
-            // 通过一条验证
-            // success:function(){
-            //     show(_form.serialize())
-            // },
-            // 通过全部验证
             submitHandler:function(){
                 _form[0].getElementsByTagName('fieldset')[0].setAttribute('disabled',true);
                 setTimeout(function(){
@@ -75,6 +72,29 @@ define(['validate'],function(validate){
             },
             // 调试模式
             debug:true
+
+            // 通过一条验证
+            // success:function(){
+            //     show(_form.serialize())
+            // },
+            // 通过全部验证
+            //     //         //3.验证失败后触发的事件 
+            //         invalidHandler:function(event,validator){
+            //             show('验证失败了,'+'错误数:'+validator.numberOfInvalids())
+            //         },
+
+            //         //5.不再对某元素进行校验
+            //         ignore:'#number',
+
+            //         //6. group和errorPlaceMent统一显示出错信息
+            //         groups:{
+            //             username:"password range1 email" //参考http://www.imooc.com/video/7485
+            //         },
+            //         errorPlaceMent:function(error,element){
+            //             show('group错误'+error)
+            //             $(document.createTextNode('dfdsf')).insertBefore($('#errorGroupsShow'));
+            //         }
+
         })
     }
     /* 自定义合法的用户名正则 */ 

@@ -7,7 +7,6 @@ define(function(){
     formRange.prototype.render=function(){
         var result=result || document.createElement('span');
         $(this.range).on('mousedown',function(){
-                show(1)
                 $(this).after(result);
                 $(this).on('mousemove',function(e){
                     // resul
