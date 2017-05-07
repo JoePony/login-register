@@ -1,0 +1,163 @@
+html{
+    font-size:14px;
+}
+body{
+    background-color:#f6f6f6;
+    font-family:'Microsoft Yahei';
+}
+img{
+    max-width:100%;
+}
+/* 公共样式类 start */
+.clearfix:after{
+    content:'';
+    display:block;
+    clear:both;
+    width:0;
+    height:0;
+    visibility:none;
+}
+.clearfix{
+    zoom:1;
+}
+.dis-n{
+    display:none; /* 防止初次加载时的跳动 */
+}
+/* 公共样式类 end */
+
+/* 重置部分bootstrap样式 */
+.form-group{
+    margin-bottom:5px;
+    position:relative;
+}
+.form-reg .form-group:last-of-type,
+.form-login .form-group:last-of-type{
+    margin-top:30px;
+}
+label{
+    margin-bottom:2px;
+    font-weight:400;
+    font-size:1rem;
+}
+
+/* 局中的对话框 */
+.dialog-wrap{
+    background-color:#FFF;
+    padding:15px;
+    position:absolute;
+    top:10%;
+    left:50%;
+    -webkit-transform:translate(-50%);
+        -ms-transform:translate(-50%);
+            transform:translate(-50%);
+    border-radius:5px;
+    box-shadow:3px 5px 10px #888;
+    transition:all .5s linear;
+}
+/* 注册表单样式 */
+.form-reg .label-gender{
+    background:url('data:image/jpg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAABkAAD/4QMraHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjMtYzAxMSA2Ni4xNDU2NjEsIDIwMTIvMDIvMDYtMTQ6NTY6MjcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzYgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkUxMDg1MTgyMUI1NDExRTNBMzFBQTQxMkE5QjUxODMxIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkUxMDg1MTgzMUI1NDExRTNBMzFBQTQxMkE5QjUxODMxIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RTEwODUxODAxQjU0MTFFM0EzMUFBNDEyQTlCNTE4MzEiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RTEwODUxODExQjU0MTFFM0EzMUFBNDEyQTlCNTE4MzEiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAABAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAgICAgICAgICAgIDAwMDAwMDAwMDAQEBAQEBAQIBAQICAgECAgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwP/wAARCAAzABADAREAAhEBAxEB/8QAiAAAAgEFAAAAAAAAAAAAAAAAAAYIAQUHCQoBAAMBAQAAAAAAAAAAAAAAAAAEBgMFEAABBAEDAwMEAwEAAAAAAAADAQIEBQYSEwcAERQhFQgxIjIjJEQXNxEAAQMCAwUFCAMAAAAAAAAAARECAwAEMRIFIUFRMgZhgaHRIvBxkbFSEzMVweFi/9oADAMBAAIRAxEAPwDr1+eF3ldfVYNV18ubDxW2NdrcJDIQIp9nEbXrAiWLxK1XhZGOYghOXQRyOcqKo2q2r6XjgfJK94BnaAi7gVUjwU+dSHVctwyOKNhIgdmVN5CID3Kg8qPgfd5ZYVWc1lhLmzMVqTUq06TCEMKDZy22Cz4lcQiuVgXxghIUTV0DcrXIiKRyuOqI4GSRPYAJ3Aqm8BEJ8UPlR0pLcPjljeSbdpai7iVUDuRR50zH5/wHmqu5ixyZhEa+x/BMNt80pg3MogyZKmNsk+TNY2OIcqhahSgQJBFWQgjOV2lVViYjSrrTX28zZS2WWQMKDlzYDg7eqhFHfW51e01NlzC6IPhiiL2qebKqni3ciFUPdVQ8/wCBcK13DuOQ8IjUOPZ3htRmlyGmlPITGkyRkbxpr2yBEk3zVKI6GIUrZCiC1W6lRGKHSrrUn3EzpS+WKQsCjmyqo/zuRAinvoGr2mmMtoWxBkMsQecp5cyIeLt6qVQd1XsPwp4vhnnHqso5NpksY8yDKDV5JUxxlrJ6KyXUle7HCyJNbIEuh4ykJuMTs9XfXrI9SXrgA9kDkIIVpxGB5sfdWo6ZsWkmN87VBBRwGw4jl2jsNBvhTxfMPBPa5RybcpXR4cGKG0ySpkDFWQERkSpE9uOCkRq2OJNDBiIPbYvZit+vQOpL1oIYyBqkko04nE82PvoPTNi4gyPncgACuB2DAcuwdgqYPU/VHR0UVrw+anL4Bwq3jnFclIywScc2YxKwpBvCAQR+FWz5I1arVIUikcFF+5GtV/p2Ra3pzTyXOvJ2ehPQT4kedR3U2ogNbZQP9a+sDwBP8UkfDHl8VHdWuC5ZkpQVlyyG7Fo1iUpYo7pZGwWHFMRXpEdOERukfdGPe30+76s9RaeZY23UDAXtXMmKce1KV6a1ERSutLh6McmUHDNwHBeFZM5fynBeVZmf4ZiWH4XP5Pxy0mY642X+LUWVtHioeFYT8Vsd+IKVZ1VkNWsFJKiuY3W1HJ2TpPT4LqxbFc3EkgsntDvQpAXaA4bUBG8CntRntb901tbxxG+Y4t9aAlNhLDsUg7ie2lLi+8wzgWnoh8rYbhUXMzW8OBUkpXwrrMY9fKMRZuQ5I9kmZDrgwtbGiQb2GI1F7N9O6730VxqsjjYySG2yknMoYowa3YCV3rsFL2EttpMbBqEUQuS4AZUc8A4udiAm5NpqJfMnjf7Fyb28H/oOVatr3bc1+/Tdz8v7Gvvq0/r3O+j7NPXe0/N+vhx/C3h9I9vntqf1LL+ynw/M7j9R9vlSJF8T3eHue37fnRdz3D3vTo3R6vL8X+Vtdvy2v2afx9emjm+2UVUOGXw/ulG5fuBcqKMc3im34V//2Q==') no-repeat right 0;
+    width:20px;
+    height:20px;
+    padding-right:13px;
+    display:inline-block;
+}
+.form-reg .label-gender:last-child{
+    background-position:right -32px;
+}
+.form-reg select{
+    margin-bottom:5px;
+}
+.form-control{
+    position:relative;
+}
+/* 错误提示tips */
+.form-reg label.error{
+    color:#F00;
+    font-size:12px;
+    background-color:#FFF;
+    border-radius:3px;
+    box-shadow:1px 1px 5px #888;
+    padding:1px 12px;
+    position:absolute;
+    bottom:-23px;
+    right:3px;
+    z-index:9;
+    transition:all 1.2s linear;
+    -webkit-animation:errorAminition .3s cubic-bezier(0,2.7,1,1);
+            animation:errorAminition .3s cubic-bezier(0,2.7,1,1);
+            -webkit-transform-origin:23px -6px;
+                -ms-transform-origin:23px -6px;
+                    transform-origin:23px -6px;
+}
+@-webkit-keyframes errorAminition{
+    0%{ -webkit-transform:rotate(0deg); transform:rotate(0deg); }
+    30%{ -webkit-transform:rotate(5deg); transform:rotate(5deg); }
+    60%{ -webkit-transform:rotate(-5deg); transform:rotate(-5deg); }
+    100%{ -webkit-transform:rotate(0deg); transform:rotate(0deg); }
+}
+@keyframes errorAminition{
+    0%{ -webkit-transform:rotate(0deg); transform:rotate(0deg); }
+    30%{ -webkit-transform:rotate(5deg); transform:rotate(5deg); }
+    60%{ -webkit-transform:rotate(-5deg); transform:rotate(-5deg); }
+    100%{ -webkit-transform:rotate(0deg); transform:rotate(0deg); }
+}
+/* 错误提示框的小三角 */
+.form-reg label.error:before,
+.form-reg label.error:after{
+    content:'';
+    border-right:6px solid transparent;
+    border-bottom:6px solid #FFF;
+    border-left:6px solid transparent;
+    position:absolute;
+    top:-5px;
+    left:20px;
+}
+.form-reg label.error:before{
+    border-bottom-color:#AAA;
+    top:-6px;
+}
+.reg-notice{
+    font-size:12px;
+    color:#888;
+}
+@media screen {
+    .dialog-wrap{
+        width:50%;
+    }
+}
+@media screen and (max-width:768px){
+    .dialog-wrap{
+        width:90%;
+    }
+}
+@media screen and (max-device-width:480px){
+    .dialog-wrap{
+        width:100%;
+        height:100%;
+        top:0;
+        border-radius:0;
+        box-shadow:0 0 0 0 transparent;
+    }
+}
+/* 登录表单 */
+.tabs{
+    border-bottom:1px solid #DDD;
+    margin-bottom:20px;
+}
+.tabs > *{
+    float:left;
+    width:auto;
+    border:1px solid transparent;
+    border-bottom:0 none;
+    background-color:transparent;
+    margin:0 10px -1px 0;
+    padding:4px 15px;
+    border-radius:8px 8px 0 0;
+    font-size:18px;
+    cursor:pointer;
+}
+.tab-active{
+    background-color:#FFF;
+    border-color:#888;
+}

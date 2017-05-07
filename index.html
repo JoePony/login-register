@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="css/bootstrap-v3.3.5.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Register & Login</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="dialog-wrap">
+            <div class="tabs clearfix" id="tabs">
+                <legend class="tab-active">免费注册</legend>
+                <legend>登录</legend>
+            </div>
+            <div class="tab-panes" id="tab-panes">
+                <form action="" class="form-reg" id="form-reg" method="post">
+                    <fieldset>
+                        <div class="form-group form-group-sm">
+                            <label for="username">用户名：</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="username" id="username" required autocomplete="off" />
+                                <div class="input-group-addon">*</div>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="psw">密码：</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" name="psw" id="psw" required autocomplete="off" />
+                                <div class="input-group-addon">*</div>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="psw-confirm">确定密码：</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" name="psw-confirm" id="psw-confirm" required autocomplete="off" />
+                                <div class="input-group-addon">*</div>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label>性别：</label>
+                            <label class="radio-inline label-gender">
+                                <input type="radio" name="gender" value="男" />
+                            </label>
+                            <label class="radio-inline label-gender">
+                                <input type="radio" name="gender" value="女" />
+                            </label>
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="birthday">生日：</label>
+                            <input type="date" class="form-control" name="birthday" id="birthday" autocomplete="off" />
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="email">Email：</label>
+                            <input type="email" class="form-control" name="email" placeholder="您的常用email" id="email" autocomplete="off" />
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <input type="submit" class="btn btn-success btn-block" value="确定" />
+                        </div>
+                        <h3 class="reg-notice text-center">请严格遵守保密法律法规，严禁在互联网上存储、处理、传输、发布涉密信息。</h3>
+                    </fieldset>
+                </form>
+                <form action="" class="form-login dis-n" id="form-login">
+                    <fieldset>
+                        <div class="form-group form-group-sm">
+                            <label for="username">用户名：</label>
+                            <input type="text" class="form-control form-control-sm" name="username" />
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label for="psw">密码：</label>
+                            <input type="password" class="form-control" name="psw" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-success btn-block" value="确定" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+    /*
+    Mock server
+     */ 
+    // $(document).ready(function() {
+    //     (function($) {
+
+
+    //         // var mock=false;
+    //         // if(mock){
+    //         //     var obj={};
+    //         //     $.get('js/json/ProJson.js',function(r){
+    //         //         obj=r;
+    //         //     })
+    //         //     Mock.mock('js/json/ProJson.js',obj)
+    //         // }
+    //     })(jQuery);
+    // });
+    
+    function show(r) {
+        if (typeof console !== 'undefined') {
+            console.log(r);
+            document.title = r;
+        } else {
+            document.title = r;
+        }
+    }
+    </script>
+    <script src="js/lib/require_v2.1.11.js" data-main="js/script/main"></script>
+</body>
+
+</html>
