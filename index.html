@@ -11,7 +11,7 @@
 
 <body>
     <div class="container">
-        <div class="dialog-wrap">
+        <div class="dialog-wrap" id="form-wrap">
             <div class="tabs clearfix" id="tabs">
                 <legend class="tab-active">免费注册</legend>
                 <legend>登录</legend>
@@ -22,7 +22,7 @@
                         <div class="form-group form-group-sm">
                             <label for="username">用户名：</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" name="username" id="username" required autocomplete="off" />
+                                <input type="text" class="form-control" name="username" autofocus="true" id="username" required autocomplete="off" />
                                 <div class="input-group-addon">*</div>
                             </div>
                         </div>
@@ -50,12 +50,8 @@
                             </label>
                         </div>
                         <div class="form-group form-group-sm">
-                            <label for="birthday">生日：</label>
-                            <input type="date" class="form-control" name="birthday" id="birthday" autocomplete="off" />
-                        </div>
-                        <div class="form-group form-group-sm">
                             <label for="email">Email：</label>
-                            <input type="email" class="form-control" name="email" placeholder="您的常用email" id="email" autocomplete="off" />
+                            <input type="email" class="form-control" name="email" placeholder="仅用于登录和重置密码" id="email" autocomplete="off" />
                         </div>
                         <div class="form-group form-group-sm">
                             <input type="submit" class="btn btn-success btn-block" value="确定" />
@@ -63,11 +59,11 @@
                         <h3 class="reg-notice text-center">请严格遵守保密法律法规，严禁在互联网上存储、处理、传输、发布涉密信息。</h3>
                     </fieldset>
                 </form>
-                <form action="" class="form-login dis-n" id="form-login">
+                <form action="" class="form-login dis-n" id="form-login" method="post">
                     <fieldset>
                         <div class="form-group form-group-sm">
                             <label for="username">用户名：</label>
-                            <input type="text" class="form-control form-control-sm" name="username" />
+                            <input type="text" class="form-control form-control-sm" autofocus="true" name="username" autocomplete="off" />
                         </div>
                         <div class="form-group form-group-sm">
                             <label for="psw">密码：</label>
@@ -81,17 +77,6 @@
             </div>
         </div>
     </div>
-    <script>
-    
-    function show(r) {
-        if (typeof console !== 'undefined') {
-            console.log(r);
-            document.title = r;
-        } else {
-            document.title = r;
-        }
-    }
-    </script>
     <script src="js/lib/require_v2.1.11.js" data-main="js/script/main"></script>
 </body>
 

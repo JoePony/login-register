@@ -7,13 +7,20 @@ require.config({
         //validateForm自定义组件
         validateForm: '../widget/validateForm',
         //标签切换自定义组件
-        tabSwitch:'../widget/tabSwitch'
+        tabSwitch:'../widget/tabSwitch',
+
+        setStorage:'../widget/setStorage',
+        validateRegForm:'../widget/validateRegForm',
+        validateLoginForm:'../widget/validateLoginForm',
+        // joeDatePicker:'../widget/joeDatePicker',
+        getStorage:'../widget/getStorage',
+        dialogBounce:'../widget/dialogBounce'
         // Mock Server库
         // ,mock:'../lib/mock-min'
     }
 });
 
-require(['validateForm','tabSwitch'], function(validateForm,tabSwitch) {
+require(['validateRegForm','validateLoginForm','tabSwitch'], function(validateRegForm,validateLoginForm,tabSwitch) {
     $(document).ready(function() {
         /* 初始化切换组建 */
         new tabSwitch({
@@ -21,11 +28,17 @@ require(['validateForm','tabSwitch'], function(validateForm,tabSwitch) {
             panes:document.getElementById('tab-panes'),
             initialIndex:0,
             tabActiveClass:'tab-active',
-            eventType:'mouseover'
+            eventType:'click'
         });
 
         /* 表单验证 */
-        new validateForm();
+        new validateRegForm();
+        new validateLoginForm();
+
+        /* 初始化自定义日期插件 */ 
+        // new joeDatePicker({
+        //     ele:document.querySelector('#birthday')
+        // });
     });
 
 });

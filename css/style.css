@@ -1,4 +1,4 @@
-html{
+﻿html{
     font-size:14px;
 }
 body{
@@ -22,6 +22,29 @@ img{
 }
 .dis-n{
     display:none; /* 防止初次加载时的跳动 */
+}
+.center-dialog{
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform:translate(-50%,-50%);
+        -ms-transform:translate(-50%,-50%);
+            transform:translate(-50%,-50%);
+    background:rgba(0,0,0,0.5);
+}
+.pack-align-center{
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+    display:-ms-box;
+    -ms-box-pack:center;
+    -ms-box-align:center;
+    display:box;
+    box-pack:center;
+    box-align:center;
 }
 /* 公共样式类 end */
 
@@ -53,6 +76,7 @@ label{
     border-radius:5px;
     box-shadow:3px 5px 10px #888;
     transition:all .5s linear;
+    min-width:260px;
 }
 /* 注册表单样式 */
 .form-reg .label-gender{
@@ -72,7 +96,7 @@ label{
     position:relative;
 }
 /* 错误提示tips */
-.form-reg label.error{
+.dialog-wrap label.error{
     color:#F00;
     font-size:12px;
     background-color:#FFF;
@@ -84,6 +108,7 @@ label{
     right:3px;
     z-index:9;
     transition:all 1.2s linear;
+    -moz-transition:all 1.2s linear;
     -webkit-animation:errorAminition .3s cubic-bezier(0,2.7,1,1);
             animation:errorAminition .3s cubic-bezier(0,2.7,1,1);
             -webkit-transform-origin:23px -6px;
@@ -96,15 +121,16 @@ label{
     60%{ -webkit-transform:rotate(-5deg); transform:rotate(-5deg); }
     100%{ -webkit-transform:rotate(0deg); transform:rotate(0deg); }
 }
+
 @keyframes errorAminition{
-    0%{ -webkit-transform:rotate(0deg); transform:rotate(0deg); }
-    30%{ -webkit-transform:rotate(5deg); transform:rotate(5deg); }
-    60%{ -webkit-transform:rotate(-5deg); transform:rotate(-5deg); }
-    100%{ -webkit-transform:rotate(0deg); transform:rotate(0deg); }
+    0%{ -webkit-transform:rotate(0deg); transform:rotate(0deg); -webkit-transform:rotate(0deg); transform:rotate(0deg); }
+    30%{ -webkit-transform:rotate(5deg); transform:rotate(5deg); -webkit-transform:rotate(5deg); transform:rotate(5deg); }
+    60%{ -webkit-transform:rotate(-5deg); transform:rotate(-5deg); -webkit-transform:rotate(-5deg); transform:rotate(-5deg); }
+    100%{ -webkit-transform:rotate(0deg); transform:rotate(0deg); -webkit-transform:rotate(0deg); transform:rotate(0deg); }
 }
 /* 错误提示框的小三角 */
-.form-reg label.error:before,
-.form-reg label.error:after{
+.dialog-wrap label.error:before,
+.dialog-wrap label.error:after{
     content:'';
     border-right:6px solid transparent;
     border-bottom:6px solid #FFF;
@@ -113,12 +139,13 @@ label{
     top:-5px;
     left:20px;
 }
-.form-reg label.error:before{
+.dialog-wrap label.error:before{
     border-bottom-color:#AAA;
     top:-6px;
 }
-.reg-notice{
+.dialog-wrap .reg-notice{
     font-size:12px;
+    line-height:1.5em;
     color:#888;
 }
 @media screen {

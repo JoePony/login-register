@@ -1,25 +1,29 @@
 /*
 表单验证组件，依赖validate第三方插件
 */ 
-define(['validate'],function(validate){
-    function validateForm(){
+define(['validate','setStorage','getStorage','dialogBounce'],function(validate,setStorage,getStorage,dialogBounce){
+    function ValidateRegForm(){
+        this.form=$('#form-reg');
         this.init();
-        this.validator();
     }
 
     // 初始化
-    validateForm.prototype.init=function(){
-        this.form=$('#form-reg');
+    ValidateRegForm.prototype.init=function(){
+        this.validatorRegister();
     };
+    ValidateRegForm.prototype.bind=function(){
+
+    }
     // 获取注册表单
-    // validateForm.prototype.render=function(){
+    // ValidateRegForm.prototype.render=function(){
         
     // };
 
-    // 验证方法
-    validateForm.prototype.validator=function(){
-        var _form=this.form;  //防止作用域引起的问题
-        this.form.validate({
+    // 注册表单验证方法
+    ValidateRegForm.prototype.validatorRegister=function(){
+        var _form=this.form  //防止作用域引起的问题
+        _form.validate({
+            // 验证规则
             rules:{
                 username:{
                     required:true,
@@ -42,6 +46,7 @@ define(['validate'],function(validate){
                     email:true  
                 }
             },
+            // 自定义提示信息
             messages:{
                 username:{
                     required:'用户名必填',
@@ -64,18 +69,33 @@ define(['validate'],function(validate){
                     email:'请填写正确的Email格式'
                 }
             },
+            // 只要有单个表单项通过验证
+            // success:function(){
+            // },
+            // 表单整体验证成功 
             submitHandler:function(){
                 _form[0].getElementsByTagName('fieldset')[0].setAttribute('disabled',true);
+                var _formUsername=_form[0].username.value,
+                    _formPsw=_form[0].psw.value;
+                new setStorage({
+                    type:'sessionStorage',                    
+                    data:[{key:_formUsername, value:_formPsw}]
+                });
+
+                new dialogBounce({
+                    msg:'注册成功，请重新登录',
+                    time:1000
+                });
                 setTimeout(function(){
-                    window.location.assign('http://www.qq.com')
-                },600);
+                    $('.tabs legend').not('tab-active').trigger('click');
+                },1000);
             },
             // 调试模式
             debug:true
 
             // 通过一条验证
             // success:function(){
-            //     show(_form.serialize())
+            //     console.log(_form.serialize())
             // },
             // 通过全部验证
             //     //         //3.验证失败后触发的事件 
@@ -101,5 +121,6 @@ define(['validate'],function(validate){
     $.validator.addMethod('isUsernameLegal',function(value,element){
         return /^\s*[a-zA-Z]\w{4,19}\s*$/.test(value);
     });
-    return validateForm;
+
+    return ValidateRegForm;
 });
